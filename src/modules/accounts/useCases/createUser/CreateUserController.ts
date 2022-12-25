@@ -1,19 +1,16 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 
-import { CreateCategoryUseCase } from "../../../cars/useCases/createCategory/CreateCategoryUseCase";
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { name, username, email, driver_license, password } = request.body;
+    const { name, email, driver_license, password } = request.body;
 
     const createUserUseCase = container.resolve(CreateUserUseCase);
 
     await createUserUseCase.execute({
       name,
-      username,
       email,
       driver_license,
       password,
