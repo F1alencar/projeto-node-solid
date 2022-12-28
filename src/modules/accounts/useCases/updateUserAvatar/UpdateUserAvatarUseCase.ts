@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
 import { AppError } from "../../../../errors/AppErros";
+import { deleteFile } from "../../../../utils/file";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 interface IRequest {
@@ -17,6 +18,10 @@ class UpdateUserAvatarUseCase {
     const user = await this.usersRepsitory.findById(user_id);
     if (!user) {
       throw new AppError("Email or password incorret!");
+    }
+
+    if (user.avatar) {
+      await deleteFile(`./tmp/avatar/${user.avatar}`);
     }
 
     user.avatar = avatar_file;
