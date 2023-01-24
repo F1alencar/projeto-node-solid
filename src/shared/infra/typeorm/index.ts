@@ -7,7 +7,7 @@ const AppDataSource = new DataSource({
   username: "docker",
   password: "ignite",
   database: "rentx",
-  migrations: ["./src/infra/typeorm/migrations/*.ts"],
+  migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   entities: ["./src/modules/**/infra/typeorm/entities/*.ts"],
 });
 

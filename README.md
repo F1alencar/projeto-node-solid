@@ -1,3 +1,16 @@
+# Comandos do Projeto
+
+
+**Criar Migration**
+
+- yarn typeorm-createMigration ./src/shared/infra/typeorm/migrations/<Nome_Da_Migration>
+
+**Rodar Migrations**
+
+- yarn typeorm-runMigration
+
+# Requisitos do projeto
+
 **RF** => Requisitos funcionais
 
 **RNF** => Requisitos não funcionais
@@ -9,14 +22,12 @@
 **RF**
 
 - Deve ser possível cadastrar um novo carro.
-- Deve ser possível listar todas as categorias.
 
 **RN**
 
 - Não deve ser possível cadastrar um carro com uma placa já existente.
-- Não deve ser possível alterar a placa de um carro já cadastrado.
 - O carro deve ser cadastrado, por padrão, com disponibilidade por padrão.
-- O usuário responsável pelo cadastro deve ser um usuário administrador.
+* O usuário responsável pelo cadastro deve ser um usuário administrador.
 
 # Listagem de Carros
 
