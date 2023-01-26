@@ -9,6 +9,9 @@
 
 - yarn typeorm-runMigration
 
+**Reverter Última Migration**
+- yarn typeorm-ReverMigration"
+
 # Requisitos do projeto
 
 **RF** => Requisitos funcionais
