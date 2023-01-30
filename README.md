@@ -10,7 +10,7 @@
 - yarn typeorm-runMigration
 
 **Reverter Última Migration**
-- yarn typeorm-ReverMigration"
+- yarn typeorm-revertMigration"
 
 # Requisitos do projeto
 
