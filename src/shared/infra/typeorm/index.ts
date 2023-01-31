@@ -6,7 +6,7 @@ const AppDataSource = new DataSource({
   port: 5432,
   username: "docker",
   password: "ignite",
-  database: "rentx",
+  database: process.env.NODE_ENV === "test" ? "rentax_test" : "rentx",
   migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   entities: ["./src/modules/**/infra/typeorm/entities/*.ts"],
 });

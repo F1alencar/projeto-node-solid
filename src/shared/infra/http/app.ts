@@ -2,17 +2,17 @@ import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 import "reflect-metadata";
-import "./shared/container";
+import "../../container";
 
-import { AppError } from "./shared/errors/AppErros";
-import { router } from "./shared/infra/http/routes";
-import { AppDataSource } from "./shared/infra/typeorm";
-import swaggerFile from "./swagger.json";
+import swaggerFile from "../../../swagger.json";
+import { AppError } from "../../errors/AppErros";
+import { AppDataSource } from "../typeorm";
+import { router } from "./routes";
 
 const app = express();
 const db = AppDataSource;
 
-db.initialize();
+if (!db.isInitialized) db.initialize();
 
 app.use(express.json());
 
@@ -34,4 +34,4 @@ app.use(
   }
 );
 
-app.listen(3333, () => console.log("Server is running!"));
+export { app };
