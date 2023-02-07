@@ -48,6 +48,17 @@ class RentalsRepositoryInMemory implements IRentalsRepository {
 
     return rental;
   }
+
+  async findByUser(user_id: string): Promise<Rental[]> {
+    const rentals: Rental[] = [];
+    this.rentalsRepository.forEach((rental) => {
+      if (rental.user_id === user_id) {
+        rentals.push(rental);
+      }
+    });
+
+    return rentals;
+  }
 }
 
 export { RentalsRepositoryInMemory };

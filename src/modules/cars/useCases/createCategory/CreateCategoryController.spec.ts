@@ -13,7 +13,7 @@ describe("Create Category Controller", () => {
     connection = AppDataSource;
 
     const password = await hash("admin", 8);
-    await connection.initialize();
+    if (!connection.isInitialized) await connection.initialize();
     await connection.runMigrations();
     await connection.query(
       `INSERT INTO USERS (id, name, email, password, "isAdmin", created_at, driver_license)
