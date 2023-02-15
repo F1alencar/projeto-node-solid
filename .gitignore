@@ -1,1 +1,16 @@
+
+##NODE MODULES
 **/node_modules
+
+##ENV
+./.env
+
+##COVERAGE
+
+**/coverage
+
+##DIST
+
+**/dist
+
+**/.vscode
